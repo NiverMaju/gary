@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0bb6d9" />
+  <title>Gary — O caramujo mais amado da internet</title>
+  <meta name="description" content="Conheça a história do Gary, o caramujo que saiu de uma loja fria e conquistou um aquário cheio de amor — e uma legião de fãs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bubbles" aria-hidden="true"></div>
+
+  <header class="hero" id="inicio">
+    <nav class="nav wrap">
+      <a class="brand" href="#inicio" aria-label="Página inicial do Gary">🐌 <span>Gary</span></a>
+      <div class="nav-links">
+        <a href="#historia">História</a>
+        <a href="#galeria">Fotos</a>
+        <a href="#mural">Mural</a>
+      </div>
+    </nav>
+
+    <div class="hero-content wrap">
+      <div class="hero-copy">
+        <span class="pill">✨ Uma história de amor em câmera lenta</span>
+        <h1>Gary, o caramujo que conquistou seu próprio aquário.</h1>
+        <p>Ele vivia em uma loja fria. Hoje tem lar, carinho, aventuras e uma legião de fãs apaixonados.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#historia">Conhecer o Gary</a>
+          <button class="btn secondary" id="feedGary" type="button">🍃 Alimentar o Gary</button>
+        </div>
+        <p class="feed-message" id="feedMessage" aria-live="polite"></p>
+      </div>
+
+      <div class="hero-photo-card">
+        <span class="sticker sticker-1">⭐ Celebridade</span>
+        <span class="sticker sticker-2">💛 Muito amado</span>
+        <img src="imagens/gary-2.jpeg" alt="Gary, um caramujo amarelo, passeando pela areia do aquário" />
+      </div>
+    </div>
+    <div class="wave" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="section story" id="historia">
+      <div class="wrap grid-2">
+        <div class="story-photo tilt-left">
+          <img src="imagens/gary-1.jpeg" alt="Gary subindo pelo vidro do aquário" loading="lazy" />
+          <span>Subindo rumo ao estrelato! 🫧</span>
+        </div>
+        <article class="paper-card">
+          <span class="eyebrow">📖 A história do Gary</span>
+          <h2>De um cantinho gelado para um lar cheio de amor</h2>
+          <p>Ninguém imaginava que aquele pequeno caramujo amarelo, quietinho no aquário de uma loja, conquistaria tantos corações.</p>
+          <p>Enquanto pessoas passavam e peixes eram escolhidos, Gary continuava ali — até que alguém enxergou muito mais do que um simples caramujo.</p>
+          <p>Ele ganhou um lar, um aquário só dele, areia para explorar, plantas para visitar e amigos para observar.</p>
+          <p>Hoje, Gary sobe no vidro, passeia sem pressa e prova que até o menor morador de um aquário pode se tornar uma grande estrela.</p>
+          <blockquote>“Gary não anda devagar. Ele aproveita cada pedacinho da viagem.” 🐌</blockquote>
+        </article>
+      </div>
+    </section>
+
+    <section class="section fun-facts">
+      <div class="wrap">
+        <div class="section-title">
+          <span class="eyebrow">🫧 Dossiê secreto</span>
+          <h2>Curiosidades sobre o astro</h2>
+        </div>
+        <div class="facts-grid">
+          <article class="fact-card"><span>💛</span><h3>Cor oficial</h3><p>Amarelo Gary: impossível não reconhecer.</p></article>
+          <article class="fact-card"><span>🧗</span><h3>Superpoder</h3><p>Escalar o vidro sem corda e sem medo.</p></article>
+          <article class="fact-card"><span>🏠</span><h3>Conquista</h3><p>Seu próprio aquário, confortável e quentinho.</p></article>
+          <article class="fact-card"><span>⭐</span><h3>Profissão</h3><p>Influenciador, explorador e especialista em calma.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="galeria">
+      <div class="wrap">
+        <div class="section-title">
+          <span class="eyebrow">📸 Álbum de família</span>
+          <h2>Os melhores momentos do Gary</h2>
+          <p>Clique em qualquer foto para ver em tamanho maior.</p>
+        </div>
+        <div class="gallery">
+          <button class="gallery-item tall" data-src="imagens/gary-1.jpeg"><img src="imagens/gary-1.jpeg" alt="Gary no vidro" loading="lazy"></button>
+          <button class="gallery-item wide" data-src="imagens/gary-2.jpeg"><img src="imagens/gary-2.jpeg" alt="Gary caminhando na areia" loading="lazy"></button>
+          <button class="gallery-item" data-src="imagens/gary-4.jpeg"><img src="imagens/gary-4.jpeg" alt="Gary explorando o fundo do aquário" loading="lazy"></button>
+          <button class="gallery-item" data-src="imagens/gary-5.jpeg"><img src="imagens/gary-5.jpeg" alt="Gary de frente" loading="lazy"></button>
+          <button class="gallery-item wide" data-src="imagens/gary-6.jpeg"><img src="imagens/gary-6.jpeg" alt="Gary perto de uma decoração amarela" loading="lazy"></button>
+          <button class="gallery-item" data-src="imagens/gary-7.jpeg"><img src="imagens/gary-7.jpeg" alt="Close do Gary" loading="lazy"></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section diary-section">
+      <div class="wrap">
+        <div class="section-title">
+          <span class="eyebrow">📝 Diário do Gary</span>
+          <h2>Notícias em câmera lenta</h2>
+        </div>
+        <div class="diary-grid">
+          <article class="diary-card"><time>12 JUL 2026</time><h3>Escalada histórica</h3><p>Hoje subi no vidro e contemplei meu reflexo. Bonito caramujo.</p><span>⭐⭐⭐⭐⭐</span></article>
+          <article class="diary-card"><time>11 JUL 2026</time><h3>Expedição pela areia</h3><p>Atravessei o aquário inteiro. Precisei descansar depois dessa aventura.</p><span>🐌💨</span></article>
+          <article class="diary-card"><time>10 JUL 2026</time><h3>Vida de celebridade</h3><p>Tiraram muitas fotos minhas. Mantive a pose profissional em todas.</p><span>📸✨</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section mural-section" id="mural">
+      <div class="wrap mural-layout">
+        <div class="mural-intro">
+          <span class="eyebrow">💌 Mural dos fãs</span>
+          <h2>Deixe um recado para o Gary</h2>
+          <p>Escolha seu avatar de caramujo, escreva seu nome e mande carinho para o astro do aquário.</p>
+          <div class="mini-note">🐌 Os comentários ficam salvos neste aparelho. Para ficarem públicos para todos, basta conectar o Firebase no arquivo <strong>script.js</strong>.</div>
+        </div>
+
+        <div class="comment-box">
+          <form id="commentForm">
+            <fieldset>
+              <legend>Escolha seu avatar</legend>
+              <div class="avatar-picker" id="avatarPicker">
+                <label><input type="radio" name="avatar" value="🐌" checked><span>🐌</span></label>
+                <label><input type="radio" name="avatar" value="🐚"><span>🐚</span></label>
+                <label><input type="radio" name="avatar" value="🧙‍♂️🐌"><span>🧙‍♂️🐌</span></label>
+                <label><input type="radio" name="avatar" value="👑🐌"><span>👑🐌</span></label>
+                <label><input type="radio" name="avatar" value="🚀🐌"><span>🚀🐌</span></label>
+                <label><input type="radio" name="avatar" value="😎🐌"><span>😎🐌</span></label>
+              </div>
+            </fieldset>
+            <label class="field">Seu nome<input id="commentName" maxlength="30" required placeholder="Ex.: Fã número 1"></label>
+            <label class="field">Sua mensagem<textarea id="commentText" maxlength="280" required placeholder="Gary, você é incrível!"></textarea></label>
+            <div class="form-footer"><span id="charCount">0/280</span><button class="btn primary" type="submit">Publicar recado 🫧</button></div>
+          </form>
+          <div class="comments" id="comments" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-content">
+      <div><strong>🐌 Gary</strong><p>De uma loja fria para milhares de corações.</p></div>
+      <a href="#inicio">Voltar ao topo ↑</a>
+    </div>
+  </footer>
+
+  <dialog id="lightbox">
+    <button id="closeLightbox" aria-label="Fechar">×</button>
+    <img id="lightboxImage" alt="Foto ampliada do Gary" />
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
