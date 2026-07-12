@@ -18,6 +18,31 @@
 .admin-panel h3,.adventure-feed h3{font-size:1.8rem;margin:0 0 10px}.admin-panel p{line-height:1.6}
 .photo-upload{display:block;border:3px dashed #8fdbea;background:#effcff;border-radius:18px;padding:22px;text-align:center;font-weight:900;cursor:pointer;margin:16px 0}.photo-upload input{display:none}.photo-preview{display:none;margin-top:14px;border-radius:16px;max-height:260px;width:100%;object-fit:cover}.photo-preview.show{display:block}
 .adventure-list{display:grid;gap:18px}.adventure-post{overflow:hidden;border:1px solid #dceff4;border-radius:20px;background:#f9feff}.adventure-post img{width:100%;max-height:420px;object-fit:cover}.adventure-body{padding:20px}.adventure-meta{display:flex;justify-content:space-between;gap:12px;align-items:center;color:#517383;font-size:.88rem;font-weight:800}.adventure-post h4{font:800 1.6rem "Baloo 2";margin:8px 0}.adventure-post p{margin:0;line-height:1.7;white-space:pre-wrap}.delete-adventure{border:0;background:#fff0f0;color:#a84b4b;border-radius:999px;padding:8px 12px;font-weight:900;cursor:pointer}.adventure-empty{text-align:center;color:#66808d;padding:28px;border:2px dashed #cfe9ef;border-radius:18px}
+
+.community-section{background:linear-gradient(145deg,#e4fbff 0%,#fff7c9 100%)}
+.community-hero{display:grid;grid-template-columns:.82fr 1.18fr;gap:34px;align-items:start}
+.community-card,.members-panel{background:white;border-radius:26px;box-shadow:var(--shadow);padding:28px}
+.community-card h3,.members-panel h3{font-size:1.9rem;margin:0 0 10px}
+.community-count{display:flex;align-items:center;gap:15px;background:#e9fbff;border:2px solid #a9e9f4;padding:17px;border-radius:18px;margin:18px 0}
+.community-count strong{font:800 2.3rem "Baloo 2";color:#0787aa;line-height:1}
+.community-count span{font-weight:800;color:#456a78}
+.community-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.member-status{display:none;background:#eaffef;border:2px solid #9be3ad;padding:16px;border-radius:16px;margin-top:16px}
+.member-status.show{display:block}
+.member-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.btn.small{padding:10px 15px;font-size:.9rem}
+.btn.danger{background:#fff0f0;color:#a84b4b;box-shadow:0 6px 0 #f0caca}
+.members-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
+.member-card{position:relative;display:grid;grid-template-columns:64px 1fr;gap:14px;align-items:center;background:#f8feff;border:2px solid #d5f0f5;border-radius:19px;padding:16px}
+.member-avatar{display:grid;place-items:center;width:64px;height:64px;border-radius:18px;background:#ddf8ff;font-size:1.85rem}
+.member-card h4{font:800 1.2rem "Baloo 2";margin:0}
+.member-card p{margin:3px 0;color:#55727f;font-size:.93rem;line-height:1.4}
+.member-badge{display:inline-block;background:#fff0a9;color:#745b00;font-size:.75rem;font-weight:900;padding:4px 8px;border-radius:999px;margin-top:5px}
+.member-empty{grid-column:1/-1;text-align:center;color:#66808d;padding:30px;border:2px dashed #cfe9ef;border-radius:18px}
+.member-delete{position:absolute;right:9px;top:9px;border:0;background:#fff0f0;border-radius:999px;width:31px;height:31px;cursor:pointer}
+.community-rules{margin:18px 0 0;padding-left:20px;line-height:1.7}
+@media(max-width:850px){.community-hero{grid-template-columns:1fr}.members-list{grid-template-columns:1fr}.community-form-grid{grid-template-columns:1fr}}
+
 .mural-section{background:linear-gradient(180deg,#fff 0%,#eafffb 100%)}.mural-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:55px;align-items:start}.mural-intro{position:sticky;top:24px}.mural-intro h2{font-size:clamp(2.2rem,4vw,3.5rem);line-height:1;margin:10px 0 20px}.mural-intro p{font-size:1.1rem;line-height:1.7}.mini-note{background:#fff3ac;border:2px dashed #dbb300;padding:16px;border-radius:14px;font-size:.95rem}.comment-box{background:white;padding:28px;border-radius:26px;box-shadow:var(--shadow)}fieldset{border:0;padding:0;margin:0 0 20px}legend,.field{font-weight:900}.avatar-picker{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}.avatar-picker input{position:absolute;opacity:0}.avatar-picker span{display:grid;place-items:center;min-width:58px;height:58px;padding:0 8px;background:#effbff;border:3px solid transparent;border-radius:16px;font-size:1.6rem;cursor:pointer}.avatar-picker input:checked+span{border-color:var(--blue);background:#d9f8ff;transform:translateY(-3px)}.field{display:block;margin:16px 0}.field input,.field textarea{display:block;width:100%;margin-top:7px;border:2px solid #ccebf3;border-radius:14px;padding:13px 14px;font:600 1rem Nunito,sans-serif;outline:none}.field textarea{min-height:110px;resize:vertical}.field input:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(6,169,212,.12)}.form-footer{display:flex;justify-content:space-between;align-items:center;gap:15px}.form-footer .btn{padding:12px 18px}.comments{display:grid;gap:14px;margin-top:28px}.comment{display:grid;grid-template-columns:58px 1fr auto;gap:14px;background:#f4fcff;border:1px solid #d9f3fa;border-radius:18px;padding:17px}.comment-avatar{width:58px;height:58px;display:grid;place-items:center;background:white;border-radius:50%;font-size:1.65rem;box-shadow:0 5px 15px rgba(0,0,0,.08)}.comment h4{margin:0;font:800 1.1rem "Baloo 2"}.comment time{font-size:.78rem;color:#66808d}.comment p{margin:5px 0 0;white-space:pre-wrap;word-break:break-word}.delete-comment{border:0;background:transparent;color:#a76161;cursor:pointer;font-size:1.1rem;height:30px}.empty-comments{text-align:center;padding:25px;color:#66808d}footer{background:#063a59;color:white;padding:38px 0}.footer-content{display:flex;justify-content:space-between;align-items:center}.footer-content strong{font:800 1.6rem "Baloo 2"}.footer-content p{margin:4px 0}.footer-content a{color:#9df3dc;font-weight:900}dialog{border:0;border-radius:20px;padding:12px;background:#061b2a;max-width:min(900px,92vw);box-shadow:0 25px 80px rgba(0,0,0,.5)}dialog::backdrop{background:rgba(0,23,36,.85);backdrop-filter:blur(4px)}dialog img{max-height:82vh;border-radius:12px}#closeLightbox{position:absolute;right:18px;top:16px;width:44px;height:44px;border-radius:50%;border:0;background:white;font-size:1.8rem;cursor:pointer}.toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,130px);background:#053d59;color:white;padding:13px 20px;border-radius:999px;font-weight:900;z-index:20;transition:.3s}.toast.show{transform:translate(-50%,0)}.bubbles{position:fixed;inset:0;pointer-events:none;z-index:10;overflow:hidden}.bubble{position:absolute;bottom:-80px;border:2px solid rgba(255,255,255,.5);border-radius:50%;animation:rise linear infinite;background:rgba(255,255,255,.08)}@keyframes rise{to{transform:translateY(-120vh) translateX(40px);opacity:0}}
 @media(max-width:900px){.hero-content,.grid-2,.mural-layout,.adventure-layout{grid-template-columns:1fr}.hero-content{padding-top:35px;gap:40px}.hero-photo-card{max-width:560px;margin:auto}.hero-photo-card img{height:430px}.facts-grid{grid-template-columns:repeat(2,1fr)}.diary-grid{grid-template-columns:1fr}.mural-intro{position:static}.gallery{grid-template-columns:repeat(2,1fr)}.gallery-item.wide{grid-column:span 1}.gallery-item.tall{grid-row:span 1}.nav-links{display:none}.section{padding:70px 0}}
 @media(max-width:560px){.hero{min-height:auto}.hero-content{padding-bottom:120px}.hero h1{font-size:3.25rem}.hero-photo-card{padding:10px 10px 60px}.hero-photo-card img{height:360px}.sticker-2{left:-8px}.facts-grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr;grid-auto-rows:300px}.paper-card{padding:28px}.story-photo img{height:400px}.comment-box{padding:19px}.comment{grid-template-columns:48px 1fr auto}.comment-avatar{width:48px;height:48px}.form-footer{align-items:stretch;flex-direction:column}.form-footer .btn{width:100%}.footer-content{flex-direction:column;gap:20px;text-align:center}}
@@ -152,6 +177,78 @@
       </div>
     </section>
 
+
+    <section class="section community-section" id="comunidade">
+      <div class="wrap">
+        <div class="section-title">
+          <span class="eyebrow">🌟 Comunidade do Gary</span>
+          <h2>Clube oficial dos fãs do Gary</h2>
+          <p>Entre para a comunidade, escolha seu caramujo e apareça no mural dos fãs.</p>
+        </div>
+
+        <div class="community-hero">
+          <div class="community-card">
+            <h3>Quero entrar para o clube 🐌</h3>
+            <p>Crie seu perfil de fã. Não precisa informar e-mail nem senha.</p>
+
+            <div class="community-count">
+              <strong id="fanCount">0</strong>
+              <span>fãs já fazem parte da comunidade</span>
+            </div>
+
+            <form id="fanForm">
+              <fieldset>
+                <legend>Escolha seu caramujo</legend>
+                <div class="avatar-picker">
+                  <label><input type="radio" name="fanAvatar" value="🐌" checked><span>🐌</span></label>
+                  <label><input type="radio" name="fanAvatar" value="👑🐌"><span>👑🐌</span></label>
+                  <label><input type="radio" name="fanAvatar" value="😎🐌"><span>😎🐌</span></label>
+                  <label><input type="radio" name="fanAvatar" value="🌈🐌"><span>🌈🐌</span></label>
+                  <label><input type="radio" name="fanAvatar" value="🚀🐌"><span>🚀🐌</span></label>
+                  <label><input type="radio" name="fanAvatar" value="🧙‍♂️🐌"><span>🧙‍♂️🐌</span></label>
+                </div>
+              </fieldset>
+
+              <div class="community-form-grid">
+                <label class="field">Nome ou apelido
+                  <input id="fanName" maxlength="28" required placeholder="Ex.: Amiga do Gary">
+                </label>
+                <label class="field">Cidade <small>(opcional)</small>
+                  <input id="fanCity" maxlength="38" placeholder="Ex.: São Paulo">
+                </label>
+              </div>
+
+              <label class="field">Minha frase de fã
+                <textarea id="fanBio" maxlength="120" required placeholder="Ex.: Eu amo acompanhar as aventuras do Gary!"></textarea>
+              </label>
+
+              <button class="btn primary" id="joinCommunity" type="submit">Entrar para a comunidade 💛</button>
+            </form>
+
+            <div class="member-status" id="memberStatus">
+              <strong>Você faz parte da comunidade do Gary! 🎉</strong>
+              <div class="member-actions">
+                <button class="btn small secondary" id="editFanProfile" type="button">Editar perfil</button>
+                <button class="btn small danger" id="leaveCommunity" type="button">Sair da comunidade</button>
+              </div>
+            </div>
+
+            <ul class="community-rules">
+              <li>Use apenas nome ou apelido.</li>
+              <li>Não publique telefone, endereço ou informações pessoais.</li>
+              <li>Espalhe carinho e respeito entre os fãs.</li>
+            </ul>
+          </div>
+
+          <div class="members-panel">
+            <h3>Quem já ama o Gary</h3>
+            <p>Os novos fãs aparecem aqui automaticamente.</p>
+            <div id="membersList" class="members-list" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section mural-section" id="mural">
       <div class="wrap mural-layout">
         <div class="mural-intro">
@@ -220,7 +317,18 @@ const adventurePhoto = document.querySelector('#adventurePhoto');
 const adventureText = document.querySelector('#adventureText');
 const adventurePreview = document.querySelector('#adventurePreview');
 const adventureList = document.querySelector('#adventureList');
+const fanForm = document.querySelector('#fanForm');
+const fanName = document.querySelector('#fanName');
+const fanCity = document.querySelector('#fanCity');
+const fanBio = document.querySelector('#fanBio');
+const fanCount = document.querySelector('#fanCount');
+const membersList = document.querySelector('#membersList');
+const memberStatus = document.querySelector('#memberStatus');
+const editFanProfile = document.querySelector('#editFanProfile');
+const leaveCommunity = document.querySelector('#leaveCommunity');
 let selectedAdventureImage = '';
+let currentFanDocId = localStorage.getItem('garyFanDocId') || '';
+let currentFanData = null;
 
 adventureDate.value = new Date().toISOString().slice(0,10);
 
@@ -273,6 +381,32 @@ function renderAdventures(items){
   </article>`).join('');
 }
 
+
+function renderMembers(items){
+  fanCount.textContent = items.length;
+  if(!items.length){
+    membersList.innerHTML='<div class="member-empty">🐌 Seja a primeira pessoa a entrar para a comunidade!</div>';
+    return;
+  }
+  membersList.innerHTML=items.map(item=>`
+    <article class="member-card">
+      <div class="member-avatar">${escapeHtml(item.avatar || '🐌')}</div>
+      <div>
+        <h4>${escapeHtml(item.name || 'Fã do Gary')}</h4>
+        <p>${item.city ? '📍 '+escapeHtml(item.city) : '🌊 Comunidade do Gary'}</p>
+        <p>${escapeHtml(item.bio || '')}</p>
+        <span class="member-badge">Fã oficial</span>
+      </div>
+      ${item.id===currentFanDocId ? `<button class="member-delete" data-id="${item.id}" title="Sair da comunidade" aria-label="Sair da comunidade">×</button>` : ''}
+    </article>`).join('');
+}
+
+function updateFanFormState(){
+  const joined = Boolean(currentFanDocId && currentFanData);
+  fanForm.style.display = joined ? 'none' : 'block';
+  memberStatus.classList.toggle('show', joined);
+}
+
 async function compressImage(file){
   const dataUrl = await new Promise((resolve,reject)=>{
     const reader = new FileReader();
@@ -316,7 +450,7 @@ adventurePhoto.addEventListener('change', async ()=>{
 
 async function startFirebase(){
   const { initializeApp } = await import('https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js');
-  const { getFirestore, collection, addDoc, deleteDoc, doc, onSnapshot, query, orderBy, serverTimestamp } = await import('https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js');
+  const { getFirestore, collection, addDoc, deleteDoc, doc, onSnapshot, query, orderBy, serverTimestamp, setDoc, getDoc } = await import('https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js');
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
 
@@ -344,6 +478,92 @@ async function startFirebase(){
     if(!confirm('Apagar este comentário?')) return;
     try{await deleteDoc(doc(db,'comentarios-gary',button.dataset.id));showToast('Recado apagado.');}
     catch(error){console.error(error);showToast('Não foi possível apagar.');}
+  });
+
+
+  const fansRef = collection(db,'fas-gary');
+
+  if(currentFanDocId){
+    try{
+      const savedFan = await getDoc(doc(db,'fas-gary',currentFanDocId));
+      if(savedFan.exists()){
+        currentFanData = {id:savedFan.id,...savedFan.data()};
+      }else{
+        currentFanDocId='';
+        localStorage.removeItem('garyFanDocId');
+      }
+    }catch(error){
+      console.error(error);
+    }
+  }
+  updateFanFormState();
+
+  onSnapshot(query(fansRef,orderBy('createdAt','desc')), snapshot => {
+    const fans = snapshot.docs.map(d=>({id:d.id,...d.data()}));
+    currentFanData = fans.find(f=>f.id===currentFanDocId) || currentFanData;
+    renderMembers(fans);
+    updateFanFormState();
+  }, error => {
+    console.error(error);
+    showToast('Não consegui carregar a comunidade. Confira as regras do Firebase.');
+  });
+
+  fanForm.addEventListener('submit', async event=>{
+    event.preventDefault();
+    const name=fanName.value.trim();
+    const city=fanCity.value.trim();
+    const bio=fanBio.value.trim();
+    const avatar=new FormData(fanForm).get('fanAvatar') || '🐌';
+    if(!name || !bio) return;
+    try{
+      if(currentFanDocId){
+        await setDoc(doc(db,'fas-gary',currentFanDocId),{name,city,bio,avatar,createdAt:currentFanData?.createdAt || serverTimestamp()},{merge:true});
+      }else{
+        const created = await addDoc(fansRef,{name,city,bio,avatar,createdAt:serverTimestamp()});
+        currentFanDocId=created.id;
+        localStorage.setItem('garyFanDocId',currentFanDocId);
+      }
+      currentFanData={id:currentFanDocId,name,city,bio,avatar};
+      updateFanFormState();
+      showToast('Você entrou para a comunidade do Gary! 🌟');
+    }catch(error){
+      console.error(error);
+      showToast('Não foi possível entrar. Confira as regras do Firebase.');
+    }
+  });
+
+  editFanProfile.addEventListener('click',()=>{
+    if(!currentFanData) return;
+    fanName.value=currentFanData.name || '';
+    fanCity.value=currentFanData.city || '';
+    fanBio.value=currentFanData.bio || '';
+    const radio=fanForm.querySelector(`input[name="fanAvatar"][value="${CSS.escape(currentFanData.avatar || '🐌')}"]`);
+    if(radio) radio.checked=true;
+    fanForm.style.display='block';
+    memberStatus.classList.remove('show');
+    fanName.focus();
+  });
+
+  async function removeFanProfile(){
+    if(!currentFanDocId) return;
+    if(!confirm('Deseja sair da comunidade do Gary?')) return;
+    try{
+      await deleteDoc(doc(db,'fas-gary',currentFanDocId));
+      currentFanDocId='';
+      currentFanData=null;
+      localStorage.removeItem('garyFanDocId');
+      fanForm.reset();
+      updateFanFormState();
+      showToast('Você saiu da comunidade.');
+    }catch(error){
+      console.error(error);
+      showToast('Não foi possível sair da comunidade.');
+    }
+  }
+
+  leaveCommunity.addEventListener('click',removeFanProfile);
+  membersList.addEventListener('click',event=>{
+    if(event.target.closest('.member-delete')) removeFanProfile();
   });
 
   const adventuresRef = collection(db,'aventuras-gary');
@@ -415,6 +635,7 @@ startFirebase().catch(error=>{
   console.error(error);
   renderComments([]);
   renderAdventures([]);
+  renderMembers([]);
   showToast('Erro ao conectar ao Firebase. Confira as regras do Firestore.');
 });
 </script>
