@@ -19,6 +19,38 @@
 .photo-upload{display:block;border:3px dashed #8fdbea;background:#effcff;border-radius:18px;padding:22px;text-align:center;font-weight:900;cursor:pointer;margin:16px 0}.photo-upload input{display:none}.photo-preview{display:none;margin-top:14px;border-radius:16px;max-height:260px;width:100%;object-fit:cover}.photo-preview.show{display:block}
 .adventure-list{display:grid;gap:18px}.adventure-post{overflow:hidden;border:1px solid #dceff4;border-radius:20px;background:#f9feff}.adventure-post img{width:100%;max-height:420px;object-fit:cover}.adventure-body{padding:20px}.adventure-meta{display:flex;justify-content:space-between;gap:12px;align-items:center;color:#517383;font-size:.88rem;font-weight:800}.adventure-post h4{font:800 1.6rem "Baloo 2";margin:8px 0}.adventure-post p{margin:0;line-height:1.7;white-space:pre-wrap}.delete-adventure{border:0;background:#fff0f0;color:#a84b4b;border-radius:999px;padding:8px 12px;font-weight:900;cursor:pointer}.adventure-empty{text-align:center;color:#66808d;padding:28px;border:2px dashed #cfe9ef;border-radius:18px}
 
+
+.feed-ranking-section{background:linear-gradient(180deg,#fff8cf 0%,#e9fbff 100%)}
+.feed-ranking-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+.feed-panel,.ranking-panel,.game-panel{background:#fff;border-radius:26px;padding:28px;box-shadow:var(--shadow)}
+.feed-total{display:flex;align-items:center;gap:14px;background:#fff8c9;border:2px solid #f4d96f;border-radius:18px;padding:16px;margin:18px 0}
+.feed-total strong{font:800 2.4rem "Baloo 2";color:#a86d00;line-height:1}
+.feed-total span{font-weight:800;color:#6b5d2e}
+.feed-note{font-size:.92rem;color:#62737c;margin-top:12px}
+.ranking-list{display:grid;gap:12px;margin-top:18px}
+.rank-row{display:grid;grid-template-columns:48px 54px 1fr auto;gap:12px;align-items:center;background:#f8feff;border:2px solid #d8eef3;border-radius:17px;padding:12px 14px}
+.rank-pos{font:800 1.35rem "Baloo 2";text-align:center}
+.rank-avatar{font-size:1.7rem;text-align:center}
+.rank-name{font-weight:900}
+.rank-count{font-weight:900;color:#087f9f;background:#e4f9ff;padding:7px 10px;border-radius:999px;white-space:nowrap}
+.rank-empty{text-align:center;color:#68808a;padding:25px;border:2px dashed #cde6ec;border-radius:17px}
+.game-section{background:linear-gradient(145deg,#dff8ff 0%,#fff3bf 100%)}
+.game-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:start}
+.game-info{background:#fff;border-radius:26px;padding:28px;box-shadow:var(--shadow)}
+.game-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}
+.game-stat{background:#effcff;border:2px solid #c9edf4;border-radius:16px;padding:13px;text-align:center}
+.game-stat strong{display:block;font:800 1.6rem "Baloo 2";color:#087f9f}
+.game-board{position:relative;min-height:430px;overflow:hidden;border-radius:28px;border:5px solid #fff;background:linear-gradient(#7ddcf3 0 58%,#e4cc8e 58% 100%);box-shadow:var(--shadow)}
+.game-board::before{content:"";position:absolute;inset:0;background:
+radial-gradient(circle at 12% 18%,rgba(255,255,255,.55) 0 5px,transparent 6px),
+radial-gradient(circle at 78% 25%,rgba(255,255,255,.45) 0 8px,transparent 9px),
+radial-gradient(circle at 45% 40%,rgba(255,255,255,.35) 0 4px,transparent 5px)}
+.game-leaf{position:absolute;display:none;border:0;background:transparent;font-size:3.4rem;cursor:pointer;filter:drop-shadow(0 5px 4px rgba(0,0,0,.18));transition:transform .08s}
+.game-leaf:active{transform:scale(.85)}
+.game-gary{position:absolute;left:30px;bottom:38px;font-size:5rem;filter:drop-shadow(0 6px 4px rgba(0,0,0,.2))}
+.game-message{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:30px;font:800 1.8rem "Baloo 2";color:#075f73;background:rgba(255,255,255,.25)}
+@media(max-width:850px){.feed-ranking-grid,.game-wrap{grid-template-columns:1fr}.game-board{min-height:360px}.game-stats{grid-template-columns:1fr 1fr 1fr}.rank-row{grid-template-columns:40px 44px 1fr auto}}
+
 .community-section{background:linear-gradient(145deg,#e4fbff 0%,#fff7c9 100%)}
 .community-hero{display:grid;grid-template-columns:.82fr 1.18fr;gap:34px;align-items:start}
 .community-card,.members-panel{background:white;border-radius:26px;box-shadow:var(--shadow);padding:28px}
@@ -178,6 +210,61 @@
     </section>
 
 
+
+    <section class="section feed-ranking-section" id="ranking">
+      <div class="wrap">
+        <div class="section-title">
+          <span class="eyebrow">🍃 Alimentação da comunidade</span>
+          <h2>Quem mais alimentou o Gary?</h2>
+          <p>Cada fã cadastrado pode alimentar o Gary e subir no ranking.</p>
+        </div>
+        <div class="feed-ranking-grid">
+          <div class="feed-panel">
+            <h3>Hora do lanchinho 🐌</h3>
+            <p>Entre para a comunidade e clique no botão para registrar uma alimentação.</p>
+            <div class="feed-total">
+              <strong id="communityFeedTotal">0</strong>
+              <span>comidinhas entregues pela comunidade</span>
+            </div>
+            <button class="btn primary" id="communityFeedButton" type="button">🍃 Dar comida para o Gary</button>
+            <p class="feed-note" id="communityFeedStatus">Seu nome aparecerá no ranking depois que você entrar na comunidade.</p>
+          </div>
+          <div class="ranking-panel">
+            <h3>🏆 Ranking dos fãs</h3>
+            <div id="feedingRanking" class="ranking-list" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section game-section" id="jogo">
+      <div class="wrap">
+        <div class="section-title">
+          <span class="eyebrow">🎮 Joguinho do Gary</span>
+          <h2>Ajude o Gary a encontrar as folhinhas</h2>
+          <p>Clique nas folhinhas que aparecem no aquário antes que o tempo acabe.</p>
+        </div>
+        <div class="game-wrap">
+          <div class="game-info">
+            <h3>Como jogar</h3>
+            <p>Você terá 20 segundos. Cada folhinha vale um ponto. Seu melhor resultado fica salvo no seu perfil de fã.</p>
+            <div class="game-stats">
+              <div class="game-stat"><strong id="gameTime">20</strong><span>segundos</span></div>
+              <div class="game-stat"><strong id="gameScore">0</strong><span>pontos</span></div>
+              <div class="game-stat"><strong id="gameBest">0</strong><span>recorde</span></div>
+            </div>
+            <button class="btn secondary" id="startGame" type="button">Começar o jogo 🎮</button>
+            <p class="feed-note">Para salvar o recorde na comunidade, entre primeiro no Clube dos Fãs.</p>
+          </div>
+          <div class="game-board" id="gameBoard">
+            <div class="game-gary">🐌</div>
+            <button class="game-leaf" id="gameLeaf" type="button" aria-label="Folhinha">🍃</button>
+            <div class="game-message" id="gameMessage">Clique em “Começar o jogo”!</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section community-section" id="comunidade">
       <div class="wrap">
         <div class="section-title">
@@ -326,6 +413,17 @@ const membersList = document.querySelector('#membersList');
 const memberStatus = document.querySelector('#memberStatus');
 const editFanProfile = document.querySelector('#editFanProfile');
 const leaveCommunity = document.querySelector('#leaveCommunity');
+const communityFeedButton = document.querySelector('#communityFeedButton');
+const communityFeedStatus = document.querySelector('#communityFeedStatus');
+const communityFeedTotal = document.querySelector('#communityFeedTotal');
+const feedingRanking = document.querySelector('#feedingRanking');
+const startGameButton = document.querySelector('#startGame');
+const gameBoard = document.querySelector('#gameBoard');
+const gameLeaf = document.querySelector('#gameLeaf');
+const gameMessage = document.querySelector('#gameMessage');
+const gameTime = document.querySelector('#gameTime');
+const gameScore = document.querySelector('#gameScore');
+const gameBest = document.querySelector('#gameBest');
 let selectedAdventureImage = '';
 let currentFanDocId = localStorage.getItem('garyFanDocId') || '';
 let currentFanData = null;
@@ -401,6 +499,23 @@ function renderMembers(items){
     </article>`).join('');
 }
 
+
+function renderFeedingRanking(items){
+  const sorted=[...items].sort((a,b)=>(b.feedCount||0)-(a.feedCount||0));
+  communityFeedTotal.textContent=sorted.reduce((sum,item)=>sum+(item.feedCount||0),0);
+  if(!sorted.length){
+    feedingRanking.innerHTML='<div class="rank-empty">Ainda não há fãs no ranking. 🐌</div>';
+    return;
+  }
+  feedingRanking.innerHTML=sorted.slice(0,10).map((item,index)=>`
+    <div class="rank-row">
+      <div class="rank-pos">${index===0?'🥇':index===1?'🥈':index===2?'🥉':index+1}</div>
+      <div class="rank-avatar">${escapeHtml(item.avatar||'🐌')}</div>
+      <div class="rank-name">${escapeHtml(item.name||'Fã do Gary')}</div>
+      <div class="rank-count">${item.feedCount||0} 🍃</div>
+    </div>`).join('');
+}
+
 function updateFanFormState(){
   const joined = Boolean(currentFanDocId && currentFanData);
   fanForm.style.display = joined ? 'none' : 'block';
@@ -450,7 +565,7 @@ adventurePhoto.addEventListener('change', async ()=>{
 
 async function startFirebase(){
   const { initializeApp } = await import('https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js');
-  const { getFirestore, collection, addDoc, deleteDoc, doc, onSnapshot, query, orderBy, serverTimestamp, setDoc, getDoc } = await import('https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js');
+  const { getFirestore, collection, addDoc, deleteDoc, doc, onSnapshot, query, orderBy, serverTimestamp, setDoc, getDoc, updateDoc, increment } = await import('https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js');
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
 
@@ -502,6 +617,14 @@ async function startFirebase(){
     const fans = snapshot.docs.map(d=>({id:d.id,...d.data()}));
     currentFanData = fans.find(f=>f.id===currentFanDocId) || currentFanData;
     renderMembers(fans);
+    renderFeedingRanking(fans);
+    if(currentFanData){
+      gameBest.textContent=currentFanData.gameBest||0;
+      communityFeedStatus.textContent=`${currentFanData.name}, você já alimentou o Gary ${currentFanData.feedCount||0} vez(es).`;
+    }else{
+      gameBest.textContent=localStorage.getItem('garyGameBest')||0;
+      communityFeedStatus.textContent='Entre para a comunidade para registrar sua alimentação no ranking.';
+    }
     updateFanFormState();
   }, error => {
     console.error(error);
@@ -519,7 +642,7 @@ async function startFirebase(){
       if(currentFanDocId){
         await setDoc(doc(db,'fas-gary',currentFanDocId),{name,city,bio,avatar,createdAt:currentFanData?.createdAt || serverTimestamp()},{merge:true});
       }else{
-        const created = await addDoc(fansRef,{name,city,bio,avatar,createdAt:serverTimestamp()});
+        const created = await addDoc(fansRef,{name,city,bio,avatar,feedCount:0,gameBest:0,createdAt:serverTimestamp()});
         currentFanDocId=created.id;
         localStorage.setItem('garyFanDocId',currentFanDocId);
       }
@@ -564,6 +687,90 @@ async function startFirebase(){
   leaveCommunity.addEventListener('click',removeFanProfile);
   membersList.addEventListener('click',event=>{
     if(event.target.closest('.member-delete')) removeFanProfile();
+  });
+
+
+  communityFeedButton.addEventListener('click', async ()=>{
+    if(!currentFanDocId){
+      showToast('Entre para a comunidade antes de alimentar o Gary. 🐌');
+      document.querySelector('#comunidade')?.scrollIntoView({behavior:'smooth'});
+      return;
+    }
+    communityFeedButton.disabled=true;
+    try{
+      await updateDoc(doc(db,'fas-gary',currentFanDocId),{feedCount:increment(1)});
+      feedMsg.textContent=foods[Math.floor(Math.random()*foods.length)];
+      showToast('Alimentação registrada no ranking! 🍃');
+    }catch(error){
+      console.error(error);
+      showToast('Não foi possível registrar a alimentação.');
+    }finally{
+      setTimeout(()=>communityFeedButton.disabled=false,700);
+    }
+  });
+
+  let gameRunning=false;
+  let gameTimer=null;
+  let leafTimer=null;
+  let score=0;
+  let timeLeft=20;
+
+  function moveLeaf(){
+    const maxX=Math.max(20,gameBoard.clientWidth-gameLeaf.offsetWidth-20);
+    const maxY=Math.max(80,gameBoard.clientHeight-gameLeaf.offsetHeight-85);
+    gameLeaf.style.left=`${20+Math.random()*(maxX-20)}px`;
+    gameLeaf.style.top=`${20+Math.random()*(maxY-20)}px`;
+    gameLeaf.style.display='block';
+  }
+
+  async function finishGame(){
+    gameRunning=false;
+    clearInterval(gameTimer);
+    clearTimeout(leafTimer);
+    gameLeaf.style.display='none';
+    gameMessage.style.display='grid';
+    gameMessage.textContent=`Fim de jogo! Você marcou ${score} ponto(s). 🐌`;
+    startGameButton.disabled=false;
+    startGameButton.textContent='Jogar novamente 🎮';
+
+    const localBest=Math.max(Number(localStorage.getItem('garyGameBest')||0),score);
+    localStorage.setItem('garyGameBest',String(localBest));
+    gameBest.textContent=localBest;
+
+    if(currentFanDocId && score>(currentFanData?.gameBest||0)){
+      try{
+        await updateDoc(doc(db,'fas-gary',currentFanDocId),{gameBest:score});
+        showToast('Novo recorde salvo no seu perfil! 🏆');
+      }catch(error){
+        console.error(error);
+        showToast('Recorde local salvo, mas não foi possível enviar ao perfil.');
+      }
+    }
+  }
+
+  startGameButton.addEventListener('click',()=>{
+    if(gameRunning) return;
+    gameRunning=true;
+    score=0;
+    timeLeft=20;
+    gameScore.textContent='0';
+    gameTime.textContent='20';
+    gameMessage.style.display='none';
+    startGameButton.disabled=true;
+    moveLeaf();
+    gameTimer=setInterval(()=>{
+      timeLeft-=1;
+      gameTime.textContent=String(timeLeft);
+      if(timeLeft<=0) finishGame();
+    },1000);
+  });
+
+  gameLeaf.addEventListener('click',()=>{
+    if(!gameRunning) return;
+    score+=1;
+    gameScore.textContent=String(score);
+    gameLeaf.style.transform='scale(.75)';
+    setTimeout(()=>{gameLeaf.style.transform='';moveLeaf();},90);
   });
 
   const adventuresRef = collection(db,'aventuras-gary');
@@ -613,7 +820,10 @@ async function startFirebase(){
 const feedBtn = document.querySelector('#feedGary');
 const feedMsg = document.querySelector('#feedMessage');
 const foods = ['Gary ganhou uma folhinha! 🍃','Gary ficou muito feliz! 💛','Nhac, nhac… obrigado! 🐌','Energia para mais uma escalada! 🧗'];
-feedBtn.addEventListener('click',()=>{feedMsg.textContent=foods[Math.floor(Math.random()*foods.length)]; showToast('Você alimentou o Gary!');});
+feedBtn.addEventListener('click',()=>{
+  document.querySelector('#ranking')?.scrollIntoView({behavior:'smooth'});
+  showToast('Entre para a comunidade e registre a comidinha no ranking! 🍃');
+});
 
 // Galeria
 const lightbox = document.querySelector('#lightbox');
@@ -636,6 +846,7 @@ startFirebase().catch(error=>{
   renderComments([]);
   renderAdventures([]);
   renderMembers([]);
+  renderFeedingRanking([]);
   showToast('Erro ao conectar ao Firebase. Confira as regras do Firestore.');
 });
 </script>
