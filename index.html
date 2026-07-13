@@ -34,6 +34,31 @@
 .rank-name{font-weight:900}
 .rank-count{font-weight:900;color:#087f9f;background:#e4f9ff;padding:7px 10px;border-radius:999px;white-space:nowrap}
 .rank-empty{text-align:center;color:#68808a;padding:25px;border:2px dashed #cde6ec;border-radius:17px}
+
+.recognize-box{margin-top:18px;padding:17px;border-radius:18px;background:#f3fbff;border:2px solid #c8eaf3}
+.recognize-box h4{margin:0 0 8px;font:800 1.2rem "Baloo 2"}
+.recognize-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:end}
+.recognize-row select{width:100%;padding:13px;border:2px solid #b9dfe8;border-radius:13px;background:#fff;font:inherit}
+.recognize-help{font-size:.85rem;color:#627985;margin-top:8px}
+.climb-section{background:linear-gradient(180deg,#eafcff 0%,#d6f4ff 50%,#fff1bc 100%)}
+.climb-board{position:relative;min-height:500px;overflow:hidden;border-radius:28px;border:5px solid #fff;background:
+linear-gradient(90deg,rgba(255,255,255,.18) 0 2px,transparent 2px 25%,rgba(255,255,255,.18) 25% 27%,transparent 27% 50%,rgba(255,255,255,.18) 50% 52%,transparent 52% 75%,rgba(255,255,255,.18) 75% 77%,transparent 77%),
+linear-gradient(#6fd2ef 0 80%,#d8bd76 80% 100%);
+box-shadow:var(--shadow)}
+.climb-board::after{content:"";position:absolute;left:0;right:0;bottom:20%;height:5px;background:#977841;box-shadow:0 8px 0 rgba(255,255,255,.25)}
+.climb-gary{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);font-size:4.8rem;z-index:4;transition:left .14s,bottom .14s;filter:drop-shadow(0 5px 4px rgba(0,0,0,.2))}
+.climb-leaf{position:absolute;font-size:2.5rem;z-index:3;filter:drop-shadow(0 3px 3px rgba(0,0,0,.15))}
+.climb-obstacle{position:absolute;font-size:3rem;z-index:3}
+.climb-controls{display:grid;grid-template-columns:repeat(3,68px);justify-content:center;gap:8px;margin-top:18px}
+.climb-controls button{border:0;border-radius:18px;background:#fff;box-shadow:0 5px 0 #b9dce5;font-size:1.8rem;padding:13px;cursor:pointer}
+.climb-controls button:active{transform:translateY(3px);box-shadow:0 2px 0 #b9dce5}
+.climb-controls .up{grid-column:2}
+.climb-controls .left{grid-column:1;grid-row:2}
+.climb-controls .right{grid-column:3;grid-row:2}
+.climb-progress{height:18px;background:#d9edf2;border-radius:999px;overflow:hidden;margin:16px 0}
+.climb-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#f6d957,#73d88d);transition:width .2s}
+@media(max-width:850px){.recognize-row{grid-template-columns:1fr}.climb-board{min-height:420px}}
+
 .game-section{background:linear-gradient(145deg,#dff8ff 0%,#fff3bf 100%)}
 .game-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:start}
 .game-info{background:#fff;border-radius:26px;padding:28px;box-shadow:var(--shadow)}
@@ -265,6 +290,49 @@ radial-gradient(circle at 45% 40%,rgba(255,255,255,.35) 0 4px,transparent 5px)}
       </div>
     </section>
 
+
+    <section class="section climb-section" id="escalada">
+      <div class="wrap">
+        <div class="section-title">
+          <span class="eyebrow">🧗 Novo jogo</span>
+          <h2>Ajude o Gary a escalar o aquário</h2>
+          <p>Suba pelo vidro, pegue as folhinhas e chegue ao topo sem bater nos obstáculos.</p>
+        </div>
+
+        <div class="game-wrap">
+          <div class="game-info">
+            <h3>Escalada do Gary 🐌</h3>
+            <p>Use as setas do teclado ou os botões. Cada passo para cima aumenta o progresso. Pegue folhinhas para ganhar pontos extras.</p>
+
+            <div class="game-stats">
+              <div class="game-stat"><strong id="climbScore">0</strong><span>pontos</span></div>
+              <div class="game-stat"><strong id="climbHeight">0%</strong><span>altura</span></div>
+              <div class="game-stat"><strong id="climbBest">0</strong><span>recorde</span></div>
+            </div>
+
+            <div class="climb-progress"><span id="climbProgressBar"></span></div>
+            <button class="btn primary" id="startClimbGame" type="button">Começar a escalada</button>
+
+            <div class="climb-controls">
+              <button class="up" id="climbUp" type="button" aria-label="Subir">⬆️</button>
+              <button class="left" id="climbLeft" type="button" aria-label="Esquerda">⬅️</button>
+              <button class="right" id="climbRight" type="button" aria-label="Direita">➡️</button>
+            </div>
+          </div>
+
+          <div class="climb-board" id="climbBoard">
+            <div class="climb-gary" id="climbGary">🐌</div>
+            <div class="climb-leaf" id="climbLeaf1">🍃</div>
+            <div class="climb-leaf" id="climbLeaf2">🥬</div>
+            <div class="climb-leaf" id="climbLeaf3">🍀</div>
+            <div class="climb-obstacle" id="climbObstacle1">🪨</div>
+            <div class="climb-obstacle" id="climbObstacle2">🐟</div>
+            <div class="game-message" id="climbMessage">Clique em “Começar a escalada”!</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section community-section" id="comunidade">
       <div class="wrap">
         <div class="section-title">
@@ -312,7 +380,22 @@ radial-gradient(circle at 45% 40%,rgba(255,255,255,.35) 0 4px,transparent 5px)}
               <button class="btn primary" id="joinCommunity" type="submit">Entrar para a comunidade 💛</button>
             </form>
 
-            <div class="member-status" id="memberStatus">
+            
+            <div class="recognize-box" id="recognizeBox">
+              <h4>Já faz parte da comunidade?</h4>
+              <p>Escolha seu perfil para este aparelho reconhecer você sem criar outro cadastro.</p>
+              <div class="recognize-row">
+                <label class="field">Meu perfil
+                  <select id="existingFanSelect">
+                    <option value="">Selecione seu nome ou apelido</option>
+                  </select>
+                </label>
+                <button class="btn small secondary" id="recognizeFanButton" type="button">Esse perfil é meu 🐌</button>
+              </div>
+              <p class="recognize-help">Como o site não usa senha, essa identificação fica salva somente neste navegador.</p>
+            </div>
+
+<div class="member-status" id="memberStatus">
               <strong>Você faz parte da comunidade do Gary! 🎉</strong>
               <div class="member-actions">
                 <button class="btn small secondary" id="editFanProfile" type="button">Editar perfil</button>
@@ -424,6 +507,29 @@ const gameMessage = document.querySelector('#gameMessage');
 const gameTime = document.querySelector('#gameTime');
 const gameScore = document.querySelector('#gameScore');
 const gameBest = document.querySelector('#gameBest');
+const existingFanSelect = document.querySelector('#existingFanSelect');
+const recognizeFanButton = document.querySelector('#recognizeFanButton');
+const recognizeBox = document.querySelector('#recognizeBox');
+const climbBoard = document.querySelector('#climbBoard');
+const climbGary = document.querySelector('#climbGary');
+const climbScore = document.querySelector('#climbScore');
+const climbHeight = document.querySelector('#climbHeight');
+const climbBest = document.querySelector('#climbBest');
+const climbProgressBar = document.querySelector('#climbProgressBar');
+const startClimbGame = document.querySelector('#startClimbGame');
+const climbUp = document.querySelector('#climbUp');
+const climbLeft = document.querySelector('#climbLeft');
+const climbRight = document.querySelector('#climbRight');
+const climbMessage = document.querySelector('#climbMessage');
+const climbLeaves = [
+  document.querySelector('#climbLeaf1'),
+  document.querySelector('#climbLeaf2'),
+  document.querySelector('#climbLeaf3')
+];
+const climbObstacles = [
+  document.querySelector('#climbObstacle1'),
+  document.querySelector('#climbObstacle2')
+];
 let selectedAdventureImage = '';
 let currentFanDocId = localStorage.getItem('garyFanDocId') || '';
 let currentFanData = null;
@@ -520,6 +626,7 @@ function updateFanFormState(){
   const joined = Boolean(currentFanDocId && currentFanData);
   fanForm.style.display = joined ? 'none' : 'block';
   memberStatus.classList.toggle('show', joined);
+  if(recognizeBox) recognizeBox.style.display = joined ? 'none' : 'block';
 }
 
 async function compressImage(file){
@@ -615,11 +722,19 @@ async function startFirebase(){
 
   onSnapshot(query(fansRef,orderBy('createdAt','desc')), snapshot => {
     const fans = snapshot.docs.map(d=>({id:d.id,...d.data()}));
-    currentFanData = fans.find(f=>f.id===currentFanDocId) || currentFanData;
+    currentFanData = fans.find(f=>f.id===currentFanDocId) || null;
+
+    existingFanSelect.innerHTML='<option value="">Selecione seu nome ou apelido</option>'+
+      fans
+        .sort((a,b)=>(a.name||'').localeCompare(b.name||'','pt-BR'))
+        .map(f=>`<option value="${f.id}">${escapeHtml(f.avatar||'🐌')} ${escapeHtml(f.name||'Fã do Gary')}${f.city?' — '+escapeHtml(f.city):''}</option>`)
+        .join('');
+
     renderMembers(fans);
     renderFeedingRanking(fans);
     if(currentFanData){
       gameBest.textContent=currentFanData.gameBest||0;
+      climbBest.textContent=currentFanData.climbBest||localStorage.getItem('garyClimbBest')||0;
       communityFeedStatus.textContent=`${currentFanData.name}, você já alimentou o Gary ${currentFanData.feedCount||0} vez(es).`;
     }else{
       gameBest.textContent=localStorage.getItem('garyGameBest')||0;
@@ -629,6 +744,20 @@ async function startFirebase(){
   }, error => {
     console.error(error);
     showToast('Não consegui carregar a comunidade. Confira as regras do Firebase.');
+  });
+
+
+  recognizeFanButton.addEventListener('click',()=>{
+    const selectedId=existingFanSelect.value;
+    if(!selectedId){
+      showToast('Escolha seu perfil na lista.');
+      return;
+    }
+    currentFanDocId=selectedId;
+    localStorage.setItem('garyFanDocId',selectedId);
+    currentFanData=null;
+    showToast('Perfil reconhecido neste aparelho! 🐌');
+    location.reload();
   });
 
   fanForm.addEventListener('submit', async event=>{
@@ -642,7 +771,7 @@ async function startFirebase(){
       if(currentFanDocId){
         await setDoc(doc(db,'fas-gary',currentFanDocId),{name,city,bio,avatar,createdAt:currentFanData?.createdAt || serverTimestamp()},{merge:true});
       }else{
-        const created = await addDoc(fansRef,{name,city,bio,avatar,feedCount:0,gameBest:0,createdAt:serverTimestamp()});
+        const created = await addDoc(fansRef,{name,city,bio,avatar,feedCount:0,gameBest:0,climbBest:0,createdAt:serverTimestamp()});
         currentFanDocId=created.id;
         localStorage.setItem('garyFanDocId',currentFanDocId);
       }
@@ -691,8 +820,8 @@ async function startFirebase(){
 
 
   communityFeedButton.addEventListener('click', async ()=>{
-    if(!currentFanDocId){
-      showToast('Entre para a comunidade antes de alimentar o Gary. 🐌');
+    if(!currentFanDocId || !currentFanData){
+      showToast('Selecione seu perfil em “Já faz parte da comunidade?” para este aparelho reconhecer você.');
       document.querySelector('#comunidade')?.scrollIntoView({behavior:'smooth'});
       return;
     }
@@ -772,6 +901,133 @@ async function startFirebase(){
     gameLeaf.style.transform='scale(.75)';
     setTimeout(()=>{gameLeaf.style.transform='';moveLeaf();},90);
   });
+
+
+  let climbRunning=false;
+  let climbX=50;
+  let climbY=4;
+  let climbPoints=0;
+  let collectedLeaves=new Set();
+
+  function placeClimbObjects(){
+    const leafPositions=[
+      {x:22,y:27},{x:70,y:49},{x:38,y:72}
+    ];
+    const obstaclePositions=[
+      {x:58,y:36},{x:18,y:61}
+    ];
+    climbLeaves.forEach((leaf,index)=>{
+      leaf.style.left=`${leafPositions[index].x}%`;
+      leaf.style.bottom=`${leafPositions[index].y}%`;
+      leaf.style.display='block';
+    });
+    climbObstacles.forEach((obstacle,index)=>{
+      obstacle.style.left=`${obstaclePositions[index].x}%`;
+      obstacle.style.bottom=`${obstaclePositions[index].y}%`;
+      obstacle.style.display='block';
+    });
+  }
+
+  function updateClimbVisual(){
+    climbGary.style.left=`${climbX}%`;
+    climbGary.style.bottom=`${climbY}%`;
+    const height=Math.min(100,Math.round((climbY/82)*100));
+    climbHeight.textContent=`${height}%`;
+    climbProgressBar.style.width=`${height}%`;
+    climbScore.textContent=String(climbPoints);
+  }
+
+  function objectsOverlap(a,b,tolerance=7){
+    return Math.abs(a.x-b.x)<tolerance && Math.abs(a.y-b.y)<tolerance;
+  }
+
+  async function finishClimb(won){
+    climbRunning=false;
+    climbMessage.style.display='grid';
+    climbMessage.textContent=won
+      ? `Gary chegou ao topo! Você marcou ${climbPoints} pontos! 🏆`
+      : `Ops! Gary encontrou um obstáculo. Pontuação: ${climbPoints}`;
+    startClimbGame.disabled=false;
+    startClimbGame.textContent='Jogar novamente';
+
+    const localClimbBest=Math.max(Number(localStorage.getItem('garyClimbBest')||0),climbPoints);
+    localStorage.setItem('garyClimbBest',String(localClimbBest));
+    climbBest.textContent=localClimbBest;
+
+    if(currentFanDocId && currentFanData && climbPoints>(currentFanData.climbBest||0)){
+      try{
+        await updateDoc(doc(db,'fas-gary',currentFanDocId),{climbBest:climbPoints});
+        showToast('Novo recorde de escalada salvo! 🧗');
+      }catch(error){
+        console.error(error);
+      }
+    }
+  }
+
+  function checkClimbCollisions(){
+    const gary={x:climbX,y:climbY};
+
+    const leafPositions=[
+      {x:22,y:27},{x:70,y:49},{x:38,y:72}
+    ];
+    leafPositions.forEach((pos,index)=>{
+      if(!collectedLeaves.has(index) && objectsOverlap(gary,pos,9)){
+        collectedLeaves.add(index);
+        climbLeaves[index].style.display='none';
+        climbPoints+=5;
+        showToast('Gary encontrou uma folhinha! 🍃');
+      }
+    });
+
+    const obstaclePositions=[
+      {x:58,y:36},{x:18,y:61}
+    ];
+    if(obstaclePositions.some(pos=>objectsOverlap(gary,pos,8))){
+      finishClimb(false);
+      return;
+    }
+
+    if(climbY>=82){
+      climbPoints+=10;
+      finishClimb(true);
+    }
+  }
+
+  function moveClimb(dx,dy){
+    if(!climbRunning) return;
+    climbX=Math.max(7,Math.min(93,climbX+dx));
+    climbY=Math.max(4,Math.min(84,climbY+dy));
+    if(dy>0) climbPoints+=1;
+    updateClimbVisual();
+    checkClimbCollisions();
+  }
+
+  startClimbGame.addEventListener('click',()=>{
+    climbRunning=true;
+    climbX=50;
+    climbY=4;
+    climbPoints=0;
+    collectedLeaves.clear();
+    climbMessage.style.display='none';
+    startClimbGame.disabled=true;
+    placeClimbObjects();
+    updateClimbVisual();
+  });
+
+  climbUp.addEventListener('click',()=>moveClimb(0,7));
+  climbLeft.addEventListener('click',()=>moveClimb(-9,0));
+  climbRight.addEventListener('click',()=>moveClimb(9,0));
+
+  document.addEventListener('keydown',event=>{
+    if(!climbRunning) return;
+    if(event.key==='ArrowUp'){event.preventDefault();moveClimb(0,7);}
+    if(event.key==='ArrowLeft'){event.preventDefault();moveClimb(-9,0);}
+    if(event.key==='ArrowRight'){event.preventDefault();moveClimb(9,0);}
+  });
+
+  climbBest.textContent=localStorage.getItem('garyClimbBest')||0;
+  placeClimbObjects();
+  updateClimbVisual();
 
   const adventuresRef = collection(db,'aventuras-gary');
   onSnapshot(query(adventuresRef,orderBy('createdAt','desc')), snapshot => {
